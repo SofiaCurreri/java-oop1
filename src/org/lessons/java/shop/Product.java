@@ -12,12 +12,12 @@ public class Product {
     Random random = new Random();
 
     //COSTRUTTORE
-    public Product() {
+    public Product(String name, String description, double price, double iva) {
         this.code = random.nextInt(10000);
-        this.name = "";
-        this.description = "";
-        this.price = 0;
-        this.iva = 0;
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.iva = iva;
     }
 
     //GETTER
@@ -38,7 +38,7 @@ public class Product {
     }
 
     public String getIva(){
-        return this.iva + "%";
+        return this.iva * 100 + "%";
     }
 
     //SETTER
@@ -56,5 +56,18 @@ public class Product {
 
     public void setIva(double iva){
         this.iva = iva * 100;
+    }
+
+    //METHODS
+    public double priceWithoutIva(){
+        return this.price;
+    }
+
+    public double pricePlusIva(){
+        return this.price + (this.price * this.iva);
+    }
+
+    public String extendedName(){
+        return this.code + "-" + this.name;
     }
 }
