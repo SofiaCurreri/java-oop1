@@ -21,17 +21,17 @@ public class Bank {
             System.out.println("Cosa vuoi fare?" + "\na)Versare denaro " + "\nb)Prelevare denaro" + "\nc)Uscire" + "\nScrivi la lettera corrispondente alla tua scelta");
             opzione = utente.nextLine();
 
-            if(opzione.equals('a')){
+            if(opzione.equals("a")){
                 System.out.println("Quanto vuoi versare?");
-                versamento = utente.nextLine();
-            } else if (opzione.equals('b')){
+                versamento = utente.nextDouble();
+            } else if (opzione.equals("b")){
                 System.out.println("Quanto vuoi versare?");
-                prelievo = utente.nextLine();
-            } else if (opzione.equals('c')){
+                prelievo = utente.nextDouble();
+            } else if (opzione.equals("c")){
                 break;
             } else {
                 System.out.println("Devi scegliere una delle tre opzioni");
             }
-        }while (opzione != 'c');
+        }while (opzione != "c");
     }
 }
