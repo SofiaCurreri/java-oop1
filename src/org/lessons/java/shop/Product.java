@@ -1,0 +1,60 @@
+package org.lessons.java.shop;
+
+import java.util.Random;
+public class Product {
+    //ATTRIBUTI
+    private final int code;
+    private String name;
+    private String description;
+    private double price;
+    private double iva;
+
+    Random random = new Random();
+
+    //COSTRUTTORE
+    public Product() {
+        this.code = random.nextInt(10000);
+        this.name = "";
+        this.description = "";
+        this.price = 0;
+        this.iva = 0;
+    }
+
+    //GETTER
+    public int getCode(){
+        return this.code;
+    }
+
+    public String getName(){
+        return this.name;
+    }
+
+    public String getDescription(){
+        return this.description;
+    }
+
+    public double getPrice(){
+        return this.price;
+    }
+
+    public String getIva(){
+        return this.iva + "%";
+    }
+
+    //SETTER
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public void setDescription(String description){
+        this.description = description;
+    }
+
+    public void setPrice(double price){
+        this.price = price;
+    }
+
+    public void setIva(double iva){
+        this.iva = iva * 100;
+    }
+}
