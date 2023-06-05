@@ -24,14 +24,18 @@ public class Bank {
             if(opzione.equals("a")){
                 System.out.println("Quanto vuoi versare?");
                 versamento = utente.nextDouble();
+                contoUtente.versaDeposito(versamento);
             } else if (opzione.equals("b")){
                 System.out.println("Quanto vuoi versare?");
                 prelievo = utente.nextDouble();
+                contoUtente.faiPrelievo(prelievo);
             } else if (opzione.equals("c")){
                 break;
             } else {
                 System.out.println("Devi scegliere una delle tre opzioni");
             }
-        }while (opzione != "c");
+        }while (!(opzione.equals("c")));
+
+        System.out.println("Il tuo saldo ammonta a " + contoUtente.saldoFormattato());
     }
 }
