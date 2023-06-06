@@ -16,6 +16,7 @@ public class Bank {
         nome = utente.nextLine();
 
         Conto contoUtente = new Conto(numConto, nome);
+        boolean esci = false;
 
         do{
             System.out.println("Cosa vuoi fare?" + "\na)Versare denaro " + "\nb)Prelevare denaro" + "\nc)Uscire" + "\nScrivi la lettera corrispondente alla tua scelta");
@@ -32,10 +33,10 @@ public class Bank {
                 contoUtente.faiPrelievo(prelievo);
                 System.out.println("Il tuo saldo ammonta a " + contoUtente.saldoFormattato());
             } else if (opzione.equals("c")){
-                break;
+                esci = true;
             } else {
                 System.out.println("Devi scegliere una delle tre opzioni");
             }
-        }while (!(opzione.equals("c")));
+        }while (!esci);
     }
 }

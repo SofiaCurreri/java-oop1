@@ -38,12 +38,12 @@ public class Conto {
     }
 
     public void faiPrelievo(double prelievo){
-        if((this.saldo - prelievo) >= 0) this.saldo -= prelievo;
+        if(this.saldo >= prelievo) this.saldo -= prelievo;
         else System.out.println("Se prelevi così tanto il conto andrà in rosso! Non puoi procedere con questa operazione");
     }
 
     public String saldoFormattato(){
-        DecimalFormat saldoFormattato = new DecimalFormat("###,###,###.##");
+        DecimalFormat saldoFormattato = new DecimalFormat("0,00€");
         return saldoFormattato.format(this.saldo);
     }
 }
