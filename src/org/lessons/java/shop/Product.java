@@ -59,9 +59,6 @@ public class Product {
     }
 
     //METHODS
-    public double priceWithoutIva(){
-        return this.price;
-    }
 
     public double pricePlusIva(){
         return this.price + (this.price * this.iva);
