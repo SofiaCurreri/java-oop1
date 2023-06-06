@@ -43,7 +43,7 @@ public class Conto {
     }
 
     public String saldoFormattato(){
-        DecimalFormat saldoFormattato = new DecimalFormat("0,00€");
+        DecimalFormat saldoFormattato = new DecimalFormat("###,###,###.##€");
         return saldoFormattato.format(this.saldo);
     }
 }

@@ -19,23 +19,32 @@ public class Bank {
         boolean esci = false;
 
         do{
-            System.out.println("Cosa vuoi fare?" + "\na)Versare denaro " + "\nb)Prelevare denaro" + "\nc)Uscire" + "\nScrivi la lettera corrispondente alla tua scelta");
+            System.out.println("Cosa vuoi fare?" + "\n1)Versare denaro " + "\n2)Prelevare denaro" + "\n3)Uscire" + "\nScrivi il numero corrispondente alla tua scelta");
             opzione = utente.nextLine();
 
-            if(opzione.equals("a")){
-                System.out.println("Quanto vuoi versare?");
-                versamento = utente.nextDouble();
-                contoUtente.versaDeposito(versamento);
-                System.out.println("Il tuo saldo ammonta a " + contoUtente.saldoFormattato());
-            } else if (opzione.equals("b")){
-                System.out.println("Quanto vuoi prelevare?");
-                prelievo = utente.nextDouble();
-                contoUtente.faiPrelievo(prelievo);
-                System.out.println("Il tuo saldo ammonta a " + contoUtente.saldoFormattato());
-            } else if (opzione.equals("c")){
-                esci = true;
-            } else {
-                System.out.println("Devi scegliere una delle tre opzioni");
+            switch (opzione) {
+                case "1":
+                    // versamento
+                    System.out.print("Versamento: ");
+                    versamento = utente.nextDouble();
+                    contoUtente.versaDeposito(versamento);
+                    System.out.println("Il tuo saldo è " + contoUtente.saldoFormattato());
+                    break;
+                case "2":
+                    // prelievo
+                    System.out.print("Prelievo: ");
+                    prelievo = utente.nextDouble();
+                    contoUtente.faiPrelievo(prelievo);
+                    System.out.println("Il tuo saldo è " + contoUtente.saldoFormattato());
+                    break;
+                case "3":
+                    // esci;
+                    System.out.println("Arrivederci!");
+                    esci = true;
+                    break;
+                default:
+                    System.out.println("Devi scegliere 1, 2 o 3");
+                    break;
             }
         }while (!esci);
     }
